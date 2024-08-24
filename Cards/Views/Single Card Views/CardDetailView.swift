@@ -10,19 +10,28 @@ import SwiftUI
 struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @State private var currentModal: CardModal?
-    
+        
     var body: some View {
-        Color.yellow
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button(action: { viewState.showAllCards.toggle() }) {
-                        Text("Done")
-                    }
-                }
-                ToolbarItem(placement: .bottomBar) {
-                    CardBottomToolbar(cardModel: $currentModal)
-                }
+        content
+            .modifier(CardToolBar(currentModal: $currentModal))
+    }
+    
+    var content: some View {
+        ZStack {
+            Group {
+                Capsule()
+                    .foregroundStyle(Color.yellow)
+                Text("Resize Me!")
+                    .fontWeight(.bold)
+                    .font(.system(size: 500))
+                    .minimumScaleFactor(0.01)
+                    .lineLimit(1)
             }
+            .resizableView()
+            Circle()
+                .resizableView()
+                .offset(CGSize(width: 50, height: 200))
+        }
     }
 }
 
