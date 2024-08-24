@@ -17,6 +17,8 @@
 		0F43A8AA2C7A3C3400523116 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8A92C7A3C3400523116 /* Settings.swift */; };
 		0F43A8AC2C7A3E1000523116 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8AB2C7A3E1000523116 /* ColorExtensions.swift */; };
 		0F43A8AE2C7A468200523116 /* CardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8AD2C7A468200523116 /* CardToolBar.swift */; };
+		0F43A8B02C7A63C700523116 /* PreviewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8AF2C7A63C700523116 /* PreviewData.swift */; };
+		0F43A8B22C7A640800523116 /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8B12C7A640800523116 /* TextExtensions.swift */; };
 		0FFAED7B2C78C87A00F5B005 /* CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */; };
 		0FFAED7D2C78C87A00F5B005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7C2C78C87A00F5B005 /* ContentView.swift */; };
 		0FFAED7F2C78C87B00F5B005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FFAED7E2C78C87B00F5B005 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 		0F43A8A92C7A3C3400523116 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0F43A8AB2C7A3E1000523116 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		0F43A8AD2C7A468200523116 /* CardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardToolBar.swift; sourceTree = "<group>"; };
+		0F43A8AF2C7A63C700523116 /* PreviewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewData.swift; sourceTree = "<group>"; };
+		0F43A8B12C7A640800523116 /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
 		0FFAED772C78C87A00F5B005 /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApp.swift; sourceTree = "<group>"; };
 		0FFAED7C2C78C87A00F5B005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 			children = (
 				0F43A8A62C7A377900523116 /* ViewExtensions.swift */,
 				0F43A8AB2C7A3E1000523116 /* ColorExtensions.swift */,
+				0F43A8B12C7A640800523116 /* TextExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 		0F43A8A82C7A3C2000523116 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				0F43A8A32C7A277400523116 /* Operators.swift */,
 				0F43A8A92C7A3C3400523116 /* Settings.swift */,
 			);
 			path = Config;
@@ -133,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */,
-				0F43A8A32C7A277400523116 /* Operators.swift */,
 				0F43A89C2C7A1E9400523116 /* Views */,
 				0F43A89D2C7A1EB000523116 /* Model */,
 				0F43A8A82C7A3C2000523116 /* Config */,
@@ -148,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFAED812C78C87B00F5B005 /* Preview Assets.xcassets */,
+				0F43A8AF2C7A63C700523116 /* PreviewData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -236,7 +242,9 @@
 				0FFAED8D2C78D1E200F5B005 /* SingleCardView.swift in Sources */,
 				0F43A8A42C7A277400523116 /* Operators.swift in Sources */,
 				0FFAED8B2C78D14D00F5B005 /* CardThumbnailView.swift in Sources */,
+				0F43A8B02C7A63C700523116 /* PreviewData.swift in Sources */,
 				0F43A8A22C7A24B800523116 /* Transform.swift in Sources */,
+				0F43A8B22C7A640800523116 /* TextExtensions.swift in Sources */,
 				0F43A8972C7A11E000523116 /* CardDetailView.swift in Sources */,
 				0F43A8AC2C7A3E1000523116 /* ColorExtensions.swift in Sources */,
 			);

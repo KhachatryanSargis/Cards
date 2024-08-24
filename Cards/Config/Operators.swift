@@ -13,3 +13,10 @@ func + (left: CGSize, right: CGSize) -> CGSize {
         height: left.height + right.height
     )
 }
+
+func * (left: CGSize, right: CGFloat) -> CGSize {
+    CGSize(
+        width: left.width * right,
+        height: left.height * right
+    )
+}
