@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct CardThumbnailView: View {
+    let card: Card
+    
     var body: some View {
         RoundedRectangle(cornerRadius: 15)
-            .foregroundStyle(Color.random())
+            .foregroundStyle(card.backgroundColor)
             .frame(
                 width: Settings.thumbnailSize.width,
                 height: Settings.thumbnailSize.height
@@ -19,5 +21,5 @@ struct CardThumbnailView: View {
 }
 
 #Preview {
-    CardThumbnailView()
+    CardThumbnailView(card: initialCards[0])
 }
