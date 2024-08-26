@@ -23,6 +23,8 @@
 		0F43A8B62C7A681C00523116 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8B52C7A681C00523116 /* Card.swift */; };
 		0F43A8B82C7A687000523116 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8B72C7A687000523116 /* CardStore.swift */; };
 		0F43A8BA2C7A840000523116 /* CardElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8B92C7A840000523116 /* CardElementView.swift */; };
+		0F43A8BD2C7B9E7900523116 /* Stickers in Resources */ = {isa = PBXBuildFile; fileRef = 0F43A8BC2C7B9E7900523116 /* Stickers */; };
+		0F43A8C02C7BA1C000523116 /* StickerPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8BF2C7BA1C000523116 /* StickerPicker.swift */; };
 		0FFAED7B2C78C87A00F5B005 /* CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */; };
 		0FFAED7D2C78C87A00F5B005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7C2C78C87A00F5B005 /* ContentView.swift */; };
 		0FFAED7F2C78C87B00F5B005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FFAED7E2C78C87B00F5B005 /* Assets.xcassets */; };
@@ -51,6 +53,9 @@
 		0F43A8B52C7A681C00523116 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0F43A8B72C7A687000523116 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		0F43A8B92C7A840000523116 /* CardElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardElementView.swift; sourceTree = "<group>"; };
+		0F43A8BB2C7B63CB00523116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0F43A8BC2C7B9E7900523116 /* Stickers */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Stickers; path = "../suia-materials-editions-1.0/16-adding-assets-to-your-app/assets/Stickers"; sourceTree = "<group>"; };
+		0F43A8BF2C7BA1C000523116 /* StickerPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerPicker.swift; sourceTree = "<group>"; };
 		0FFAED772C78C87A00F5B005 /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApp.swift; sourceTree = "<group>"; };
 		0FFAED7C2C78C87A00F5B005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +113,7 @@
 				0F43A8B92C7A840000523116 /* CardElementView.swift */,
 				0F43A89A2C7A157200523116 /* CardBottomToolbar.swift */,
 				0F43A8AD2C7A468200523116 /* CardToolBar.swift */,
+				0F43A8BE2C7BA19C00523116 /* Card Modal Views */,
 			);
 			path = "Single Card Views";
 			sourceTree = "<group>";
@@ -131,9 +137,18 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		0F43A8BE2C7BA19C00523116 /* Card Modal Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F43A8BF2C7BA1C000523116 /* StickerPicker.swift */,
+			);
+			path = "Card Modal Views";
+			sourceTree = "<group>";
+		};
 		0FFAED6E2C78C87A00F5B005 = {
 			isa = PBXGroup;
 			children = (
+				0F43A8BC2C7B9E7900523116 /* Stickers */,
 				0FFAED792C78C87A00F5B005 /* Cards */,
 				0FFAED782C78C87A00F5B005 /* Products */,
 			);
@@ -150,6 +165,7 @@
 		0FFAED792C78C87A00F5B005 /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				0F43A8BB2C7B63CB00523116 /* Info.plist */,
 				0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */,
 				0F43A89C2C7A1E9400523116 /* Views */,
 				0F43A89D2C7A1EB000523116 /* Model */,
@@ -229,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FFAED822C78C87B00F5B005 /* Preview Assets.xcassets in Resources */,
+				0F43A8BD2C7B9E7900523116 /* Stickers in Resources */,
 				0FFAED7F2C78C87B00F5B005 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +274,7 @@
 				0F43A8A42C7A277400523116 /* Operators.swift in Sources */,
 				0FFAED8B2C78D14D00F5B005 /* CardThumbnailView.swift in Sources */,
 				0F43A8B02C7A63C700523116 /* PreviewData.swift in Sources */,
+				0F43A8C02C7BA1C000523116 /* StickerPicker.swift in Sources */,
 				0F43A8BA2C7A840000523116 /* CardElementView.swift in Sources */,
 				0F43A8B62C7A681C00523116 /* Card.swift in Sources */,
 				0F43A8A22C7A24B800523116 /* Transform.swift in Sources */,
@@ -399,9 +417,9 @@
 				DEVELOPMENT_TEAM = 4L9HZ5K5Q3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -428,9 +446,9 @@
 				DEVELOPMENT_TEAM = 4L9HZ5K5Q3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Cards/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

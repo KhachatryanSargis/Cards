@@ -7,7 +7,9 @@
 
 import Foundation
 
-enum CardModal {
+enum CardModal: Identifiable {
+    var id: Int { hashValue }
+    
     case photoPicker
     case framePicker
     case stickerPicker
