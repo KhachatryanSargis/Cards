@@ -16,6 +16,8 @@ class ViewState: ObservableObject {
         }
     }
     
+    @Published var selectedElement: CardElement?
+    
     var selectedCard: Card?
     
     convenience init(card: Card) {
