@@ -13,11 +13,7 @@ struct CardElementView: View {
     
     var body: some View {
         if let element = element as? ImageElement {
-            ImageElementView(element: element)
-                .border(
-                    Settings.borderColor,
-                    width: selected ? Settings.borderWidth : 0
-                )
+            ImageElementView(element: element, selected: selected)
         }
         if let element = element as? TextElement {
             TextElementView(element: element)
@@ -31,20 +27,32 @@ struct CardElementView: View {
 
 struct ImageElementView: View {
     let element: ImageElement
-    
-    var body: some View {
-        if let frame = element.frame {
-            bodyMain
-                .clipShape(frame)
-        } else {
-            bodyMain
-        }
-    }
+    let selected: Bool
     
     var bodyMain: some View {
         element.image
             .resizable()
             .aspectRatio(contentMode: .fit)
+    }
+    
+    var body: some View {
+        if let frame = element.frame {
+            bodyMain
+                .clipShape(frame)
+                .overlay(
+                    frame.stroke(
+                        Settings.borderColor,
+                        lineWidth: selected ? Settings.borderWidth : 0
+                    )
+                )
+                .contentShape(frame)
+        } else {
+            bodyMain
+                .border(
+                    Settings.borderColor,
+                    width: selected ? Settings.borderWidth : 0
+                )
+        }
     }
 }
 
