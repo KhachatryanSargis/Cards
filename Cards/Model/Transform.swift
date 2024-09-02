@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Transform {
+struct Transform: Codable {
     var size = CGSize(
         width: Settings.defaultElementSize.width,
         height: Settings.defaultElementSize.height

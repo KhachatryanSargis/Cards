@@ -33,6 +33,8 @@
 		0F43A8CE2C7CD2E500523116 /* AnyShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8CD2C7CD2E500523116 /* AnyShape.swift */; };
 		0F43A8D62C820B7700523116 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8D52C820B7700523116 /* UIImageExtensions.swift */; };
 		0F43A8D82C820BF300523116 /* FileManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8D72C820BF300523116 /* FileManagerExtensions.swift */; };
+		0F43A8DA2C8215F700523116 /* AngleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8D92C8215F700523116 /* AngleExtensions.swift */; };
+		0F43A8DC2C85C92E00523116 /* TextPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F43A8DB2C85C92E00523116 /* TextPicker.swift */; };
 		0FFAED7B2C78C87A00F5B005 /* CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */; };
 		0FFAED7D2C78C87A00F5B005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7C2C78C87A00F5B005 /* ContentView.swift */; };
 		0FFAED7F2C78C87B00F5B005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FFAED7E2C78C87B00F5B005 /* Assets.xcassets */; };
@@ -72,6 +74,8 @@
 		0F43A8CD2C7CD2E500523116 /* AnyShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyShape.swift; sourceTree = "<group>"; };
 		0F43A8D52C820B7700523116 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		0F43A8D72C820BF300523116 /* FileManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtensions.swift; sourceTree = "<group>"; };
+		0F43A8D92C8215F700523116 /* AngleExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleExtensions.swift; sourceTree = "<group>"; };
+		0F43A8DB2C85C92E00523116 /* TextPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextPicker.swift; sourceTree = "<group>"; };
 		0FFAED772C78C87A00F5B005 /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApp.swift; sourceTree = "<group>"; };
 		0FFAED7C2C78C87A00F5B005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				0F43A8B12C7A640800523116 /* TextExtensions.swift */,
 				0F43A8D52C820B7700523116 /* UIImageExtensions.swift */,
 				0F43A8D72C820BF300523116 /* FileManagerExtensions.swift */,
+				0F43A8D92C8215F700523116 /* AngleExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				0F43A8C12C7C870700523116 /* PhotoPicker.swift */,
 				0F43A8C72C7CAA6A00523116 /* PencilView.swift */,
 				0F43A8CB2C7CD12100523116 /* FramePicker.swift */,
+				0F43A8DB2C85C92E00523116 /* TextPicker.swift */,
 			);
 			path = "Card Modal Views";
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				0F43A8AE2C7A468200523116 /* CardToolBar.swift in Sources */,
 				0F43A8CE2C7CD2E500523116 /* AnyShape.swift in Sources */,
 				0F43A8B42C7A67FE00523116 /* CardElement.swift in Sources */,
+				0F43A8DC2C85C92E00523116 /* TextPicker.swift in Sources */,
 				0F43A8B82C7A687000523116 /* CardStore.swift in Sources */,
 				0F43A8A02C7A23E600523116 /* ResizableView.swift in Sources */,
 				0F43A8A72C7A377900523116 /* ViewExtensions.swift in Sources */,
@@ -306,6 +313,7 @@
 				0FFAED8B2C78D14D00F5B005 /* CardThumbnailView.swift in Sources */,
 				0F43A8B02C7A63C700523116 /* PreviewData.swift in Sources */,
 				0F43A8C02C7BA1C000523116 /* StickerPicker.swift in Sources */,
+				0F43A8DA2C8215F700523116 /* AngleExtensions.swift in Sources */,
 				0F43A8BA2C7A840000523116 /* CardElementView.swift in Sources */,
 				0F43A8B62C7A681C00523116 /* Card.swift in Sources */,
 				0F43A8A22C7A24B800523116 /* Transform.swift in Sources */,

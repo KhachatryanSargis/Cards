@@ -9,10 +9,12 @@ import SwiftUI
 
 struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
+    @Environment(\.scenePhase) private var scenePhase
     @State private var currentModal: CardModal?
     @State private var stickerImage: UIImage?
     @State private var images: [UIImage] = []
     @State private var frame: AnyShape?
+    @State private var textElement = TextElement()
     @Binding var card: Card
     
     var body: some View {
@@ -45,9 +47,23 @@ struct CardDetailView: View {
                             }
                             frame = nil
                         }
-                default:
-                    EmptyView()
+                case .textPicker:
+                    TextPicker(textElement: $textElement)
+                        .onDisappear {
+                            if !textElement.text.isEmpty {
+                                card.addElement(textElement)
+                            }
+                            textElement.text = ""
+                        }
                 }
+            }
+            .onChange(of: scenePhase, { _, newValue in
+                if newValue == .inactive {
+                    card.save()
+                }
+            })
+            .onDisappear {
+                card.save()
             }
     }
     
