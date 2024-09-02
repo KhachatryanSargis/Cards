@@ -11,41 +11,47 @@ struct ResizableView: ViewModifier {
     @Binding var transform: Transform
     @State private var previousOffset: CGSize = .zero
     @State private var previousRotation: Angle = .zero
-    @State private var scale: CGFloat = 1
+    @State private var scale: CGFloat = 1.0
+    
+    let viewScale: CGFloat
+    
+    init(transform: Binding<Transform>, viewScale: CGFloat = 1) {
+        _transform = transform
+        self.viewScale = viewScale
+    }
     
     func body(content: Content) -> some View {
-        let scaleGesture = MagnifyGesture()
-            .onChanged { value in
-                scale = value.magnification
+        let scaleGesture = MagnificationGesture()
+            .onChanged { scale in
+                self.scale = scale
             }
-            .onEnded { value in
+            .onEnded { scale in
                 transform.size.width *= scale
                 transform.size.height *= scale
-                scale = 1
+                self.scale = 1.0
             }
-        let rotationGesture = RotateGesture()
-            .onChanged { value in
-                transform.rotation += value.rotation - previousRotation
-                previousRotation = value.rotation
+        let rotationGesture = RotationGesture()
+            .onChanged { rotation in
+                transform.rotation += rotation - previousRotation
+                previousRotation = rotation
             }
             .onEnded { _ in
                 previousRotation = .zero
             }
         let dragGesture = DragGesture()
             .onChanged { value in
-                transform.offset = value.translation + previousOffset
+                transform.offset = value.translation / viewScale + previousOffset
             }
             .onEnded { _ in
                 previousOffset = transform.offset
             }
-        content
+        return content
             .frame(
-                width: transform.size.width,
-                height: transform.size.height
-            )
+                width: transform.size.width * viewScale,
+                height: transform.size.height * viewScale)
             .rotationEffect(transform.rotation)
             .scaleEffect(scale)
-            .offset(transform.offset)
+            .offset(transform.offset * viewScale)
             .gesture(dragGesture)
             .gesture(SimultaneousGesture(rotationGesture, scaleGesture))
             .onAppear {
@@ -54,8 +60,14 @@ struct ResizableView: ViewModifier {
     }
 }
 
-#Preview {
-    RoundedRectangle(cornerRadius: 30)
-        .foregroundStyle(Color.red)
-        .resizableView(transform: .constant(Transform()))
+struct ResizableView_Previews: PreviewProvider {
+    static let color = Color.random()
+    static let content = Rectangle()
+    
+    static var previews: some View {
+        content
+            .foregroundColor(color)
+            .modifier(ResizableView(
+                transform: .constant(Transform())))
+    }
 }

@@ -14,21 +14,29 @@ class CardStore: ObservableObject {
         cards = defaultData ? initialCards : load()
     }
     
+    func addCard() -> Card {
+        let card = Card(backgroundColor: Color.random())
+        cards.append(card)
+        card.save()
+        return card
+    }
+    
     func index(for card: Card) -> Int? {
         cards.firstIndex { $0.id == card.id }
     }
     
     func remove(_ card: Card) {
         if let index = index(for: card) {
+            for element in cards[index].elements {
+                cards[index].remove(element)
+            }
+            UIImage.remove(name: card.id.uuidString)
+            if let filepath = FileManager.documentURL?
+                .absoluteURL.appendingPathComponent("\(card.id.uuidString).rwcard") {
+                try? FileManager.default.removeItem(at: filepath)
+            }
             cards.remove(at: index)
         }
-    }
-    
-    func addCard() -> Card {
-        let card = Card(backgroundColor: Color.random())
-        cards.append(card)
-        card.save()
-        return card
     }
 }
 

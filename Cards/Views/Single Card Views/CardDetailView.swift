@@ -11,52 +11,13 @@ struct CardDetailView: View {
     @EnvironmentObject var viewState: ViewState
     @Environment(\.scenePhase) private var scenePhase
     @State private var currentModal: CardModal?
-    @State private var stickerImage: UIImage?
-    @State private var images: [UIImage] = []
-    @State private var frame: AnyShape?
-    @State private var textElement = TextElement()
     @Binding var card: Card
     
     var body: some View {
         content
             .onDrop(of: [.image], delegate: CardDrop(card: $card))
             .modifier(CardToolBar(currentModal: $currentModal))
-            .sheet(item: $currentModal) { item in
-                switch item {
-                case .stickerPicker:
-                    StickerPicker(stickerImage: $stickerImage)
-                        .onDisappear {
-                            if let stickerImage = stickerImage {
-                                card.addElement(uiImage: stickerImage)
-                            }
-                            stickerImage = nil
-                        }
-                case .photoPicker:
-                    PhotoPicker(images: $images)
-                        .onDisappear {
-                            for image in images {
-                                card.addElement(uiImage: image)
-                            }
-                            images = []
-                        }
-                case .framePicker:
-                    FramePicker(frame: $frame)
-                        .onDisappear {
-                            if let frame = frame {
-                                card.update(viewState.selectedElement, frame: frame)
-                            }
-                            frame = nil
-                        }
-                case .textPicker:
-                    TextPicker(textElement: $textElement)
-                        .onDisappear {
-                            if !textElement.text.isEmpty {
-                                card.addElement(textElement)
-                            }
-                            textElement.text = ""
-                        }
-                }
-            }
+            .cardModals(card: $card, currentModal: $currentModal)
             .onChange(of: scenePhase, { _, newValue in
                 if newValue == .inactive {
                     card.save()
