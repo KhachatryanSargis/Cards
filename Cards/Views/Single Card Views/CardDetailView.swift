@@ -14,21 +14,32 @@ struct CardDetailView: View {
     @Binding var card: Card
     
     var body: some View {
-        content
-            .onDrop(of: [.image], delegate: CardDrop(card: $card))
-            .modifier(CardToolBar(currentModal: $currentModal))
-            .cardModals(card: $card, currentModal: $currentModal)
-            .onChange(of: scenePhase, { _, newValue in
-                if newValue == .inactive {
+        GeometryReader { proxy in
+            content(size: proxy.size)
+                .onDrop(of: [.image], delegate: CardDrop(card: $card))
+                .modifier(CardToolBar(currentModal: $currentModal))
+                .cardModals(card: $card, currentModal: $currentModal)
+                .frame(
+                    width: calculateSize(proxy.size).width,
+                    height: calculateSize(proxy.size).height
+                )
+                .clipped()
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity
+                )
+                .onChange(of: scenePhase, { _, newValue in
+                    if newValue == .inactive {
+                        card.save()
+                    }
+                })
+                .onDisappear {
                     card.save()
                 }
-            })
-            .onDisappear {
-                card.save()
-            }
+        }
     }
     
-    var content: some View {
+    func content(size: CGSize) -> some View {
         ZStack {
             card.backgroundColor
                 .edgesIgnoringSafeArea(.all)
@@ -45,7 +56,10 @@ struct CardDetailView: View {
                         Label("Delete", systemImage: "trash")
                     }
                 }
-                .resizableView(transform: bindingTransform(for: element))
+                .resizableView(
+                    transform: bindingTransform(for: element),
+                    viewScale: calculateScale(size)
+                )
                 .frame(
                     width: element.transform.size.width,
                     height: element.transform.size.height
@@ -62,6 +76,25 @@ struct CardDetailView: View {
             fatalError("Element does not exist")
         }
         return $card.elements[index].transform
+    }
+    
+    func calculateSize(_ size: CGSize) -> CGSize {
+        var newSize = size
+        let ratio = Settings.cardSize.width / Settings.cardSize.height
+        
+        if size.width < size.height {
+            newSize.height = min(size.height, newSize.width / ratio)
+            newSize.width = min(size.width, newSize.height * ratio)
+        } else {
+            newSize.width = min(size.width, newSize.height * ratio)
+            newSize.height = min(size.height, newSize.width / ratio)
+        }
+        return newSize
+    }
+    
+    func calculateScale(_ size: CGSize) -> CGFloat {
+        let newSize = calculateSize(size)
+        return newSize.width / Settings.cardSize.width
     }
 }
 

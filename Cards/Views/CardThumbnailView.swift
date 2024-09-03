@@ -9,13 +9,22 @@ import SwiftUI
 
 struct CardThumbnailView: View {
     let card: Card
+    var size: CGSize = .zero
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 15)
-            .foregroundStyle(card.backgroundColor)
+        card.backgroundColor
+            .clipShape(
+                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+            )
             .frame(
-                width: Settings.thumbnailSize.width,
-                height: Settings.thumbnailSize.height
+                width: Settings.thumbnailSize(size: size).width,
+                height: Settings.thumbnailSize(size: size).height
+            )
+            .shadow(
+                color: Color("shadow-color"),
+                radius: 3,
+                x: 0,
+                y: 0
             )
     }
 }
