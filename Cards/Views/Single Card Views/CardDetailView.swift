@@ -16,6 +16,14 @@ struct CardDetailView: View {
     var body: some View {
         GeometryReader { proxy in
             content(size: proxy.size)
+                .onDrop(
+                    of: [.image],
+                    delegate: CardDrop(
+                        card: $card,
+                        size: proxy.size,
+                        frame: proxy.frame(in: .global)
+                    )
+                )
                 .onDrop(of: [.image], delegate: CardDrop(card: $card))
                 .modifier(CardToolBar(currentModal: $currentModal))
                 .cardModals(card: $card, currentModal: $currentModal)
