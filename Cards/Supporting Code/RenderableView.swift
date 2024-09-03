@@ -30,7 +30,7 @@ struct RenderableView<Content>: View where Content: View {
     var body: some View {
         content()
         // Share
-            .onChange(of: viewState.shouldScreenshot) { _ in
+            .onChange(of: viewState.shouldScreenshot) {
                 if viewState.shouldScreenshot {
                     viewState.shouldScreenshot = false
                     card.shareImage = content().screenShot(size: Settings.cardSize)
@@ -52,7 +52,8 @@ private extension View {
     func screenShot(size: CGSize) -> UIImage? {
         let controller = UIHostingController(rootView: self)
         guard let renderView = controller.view,
-              let window = UIApplication.shared.windows.first else { return nil }
+//              let window = UIApplication.shared.windows.first else { return nil }
+              let window = UIApplication.shared.keyWindow else { return nil }
         renderView.frame = CGRect(x: 0, y: CGFloat(Int.max), width: 1, height: 1)
         window.rootViewController?.view.addSubview(renderView)
         
