@@ -16,12 +16,19 @@ struct TextPicker: View {
         let onCommit = {
             dismiss()
         }
-        TextField(
-            "Enter Text",
-            text: $textElement.text,
-            onCommit: onCommit
-        )
-        
+        VStack {
+            TextField(
+                "Enter text",
+                text: $textElement.text,
+                onCommit: onCommit
+            )
+            .font(.custom(textElement.textFont, size: 30))
+            .foregroundColor(textElement.textColor)
+            TextView(
+                font: $textElement.textFont,
+                color: $textElement.textColor
+            )
+        }
     }
 }
 
