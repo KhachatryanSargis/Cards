@@ -12,20 +12,28 @@ struct CardThumbnailView: View {
     var size: CGSize = .zero
     
     var body: some View {
-        card.backgroundColor
-            .clipShape(
-                RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-            )
-            .frame(
-                width: Settings.thumbnailSize(size: size).width,
-                height: Settings.thumbnailSize(size: size).height
-            )
-            .shadow(
-                color: Color("shadow-color"),
-                radius: 3,
-                x: 0,
-                y: 0
-            )
+        Group {
+            if let uiImage = UIImage.load(uuidString: card.id.uuidString) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } else {
+                card.backgroundColor
+            }
+        }
+        .clipShape(
+            RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
+        )
+        .frame(
+            width: Settings.thumbnailSize(size: size).width,
+            height: Settings.thumbnailSize(size: size).height
+        )
+        .shadow(
+            color: Color("shadow-color"),
+            radius: 3,
+            x: 0,
+            y: 0
+        )
     }
 }
 
