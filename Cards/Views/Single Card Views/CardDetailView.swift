@@ -14,37 +14,39 @@ struct CardDetailView: View {
     @Binding var card: Card
     
     var body: some View {
-        GeometryReader { proxy in
-            content(size: proxy.size)
-                .onDrop(
-                    of: [.image],
-                    delegate: CardDrop(
-                        card: $card,
-                        size: proxy.size,
-                        frame: proxy.frame(in: .global)
+        RenderableView(card: $card) {
+            GeometryReader { proxy in
+                content(size: proxy.size)
+                    .onDrop(
+                        of: [.image],
+                        delegate: CardDrop(
+                            card: $card,
+                            size: proxy.size,
+                            frame: proxy.frame(in: .global)
+                        )
                     )
-                )
-                .onDrop(of: [.image], delegate: CardDrop(card: $card))
-                .modifier(CardToolBar(currentModal: $currentModal))
-                .cardModals(card: $card, currentModal: $currentModal)
-                .frame(
-                    width: calculateSize(proxy.size).width,
-                    height: calculateSize(proxy.size).height
-                )
-                .clipped()
-                .frame(
-                    maxWidth: .infinity,
-                    maxHeight: .infinity
-                )
-                .onChange(of: scenePhase, { _, newValue in
-                    if newValue == .inactive {
+                    .onDrop(of: [.image], delegate: CardDrop(card: $card))
+                    .frame(
+                        width: calculateSize(proxy.size).width,
+                        height: calculateSize(proxy.size).height
+                    )
+                    .clipped()
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity
+                    )
+                    .onChange(of: scenePhase, { _, newValue in
+                        if newValue == .inactive {
+                            card.save()
+                        }
+                    })
+                    .onDisappear {
                         card.save()
                     }
-                })
-                .onDisappear {
-                    card.save()
-                }
+            }
         }
+        .modifier(CardToolBar(currentModal: $currentModal))
+        .cardModals(card: $card, currentModal: $currentModal)
     }
     
     func content(size: CGSize) -> some View {

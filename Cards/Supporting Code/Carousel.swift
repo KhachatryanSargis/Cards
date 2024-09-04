@@ -18,11 +18,13 @@ struct Carousel: View {
                     cardView(store.cards[index])
                         .frame(
                             width: calculateSize(proxy.size).width,
-                            height: calculateSize(proxy.size).height)
+                            height: calculateSize(proxy.size).height
+                        )
                         .cornerRadius(15)
                         .shadow(
                             color: Color(white: 0.5, opacity: 0.7),
-                            radius: 5)
+                            radius: 5
+                        )
                         .onTapGesture {
                             viewState.selectedCard = store.cards[index]
                             withAnimation {
@@ -58,8 +60,7 @@ struct Carousel: View {
     
     func calculateSize(_ size: CGSize) -> CGSize {
         var newSize = size
-        let ratio =
-        Settings.cardSize.width / Settings.cardSize.height
+        let ratio = Settings.cardSize.width / Settings.cardSize.height
         
         if size.width < size.height {
             newSize.height = min(size.height, newSize.width / ratio)

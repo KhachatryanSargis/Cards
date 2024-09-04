@@ -41,6 +41,10 @@
 		0F53941B2C8757A40017899F /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F53941A2C8757A40017899F /* ShareSheetView.swift */; };
 		0F53941E2C87582E0017899F /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F53941D2C87582E0017899F /* AppFonts.swift */; };
 		0F5394222C8758720017899F /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5394212C8758720017899F /* TextView.swift */; };
+		0F5394242C875ACA0017899F /* AppLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5394232C875ACA0017899F /* AppLoadingView.swift */; };
+		0F5394262C875AD70017899F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5394252C875AD70017899F /* SplashScreen.swift */; };
+		0F5394282C875F8B0017899F /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5394272C875F8B0017899F /* UIApplicationExtensions.swift */; };
+		0F53942A2C8894150017899F /* ListSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5394292C8894150017899F /* ListSelectionView.swift */; };
 		0FFAED7B2C78C87A00F5B005 /* CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */; };
 		0FFAED7D2C78C87A00F5B005 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFAED7C2C78C87A00F5B005 /* ContentView.swift */; };
 		0FFAED7F2C78C87B00F5B005 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FFAED7E2C78C87B00F5B005 /* Assets.xcassets */; };
@@ -88,6 +92,10 @@
 		0F53941A2C8757A40017899F /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
 		0F53941D2C87582E0017899F /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		0F5394212C8758720017899F /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		0F5394232C875ACA0017899F /* AppLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLoadingView.swift; sourceTree = "<group>"; };
+		0F5394252C875AD70017899F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		0F5394272C875F8B0017899F /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		0F5394292C8894150017899F /* ListSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSelectionView.swift; sourceTree = "<group>"; };
 		0FFAED772C78C87A00F5B005 /* Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsApp.swift; sourceTree = "<group>"; };
 		0FFAED7C2C78C87A00F5B005 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,6 +124,7 @@
 			children = (
 				0FFAED7C2C78C87A00F5B005 /* ContentView.swift */,
 				0FFAED902C78D44F00F5B005 /* CardsView.swift */,
+				0F5394292C8894150017899F /* ListSelectionView.swift */,
 				0FFAED882C78D02600F5B005 /* CardsListView.swift */,
 				0FFAED8A2C78D14D00F5B005 /* CardThumbnailView.swift */,
 				0F43A89F2C7A23E600523116 /* ResizableView.swift */,
@@ -163,6 +172,7 @@
 				0F43A8D52C820B7700523116 /* UIImageExtensions.swift */,
 				0F43A8D72C820BF300523116 /* FileManagerExtensions.swift */,
 				0F43A8D92C8215F700523116 /* AngleExtensions.swift */,
+				0F5394272C875F8B0017899F /* UIApplicationExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -230,6 +240,8 @@
 			children = (
 				0F43A8BB2C7B63CB00523116 /* Info.plist */,
 				0FFAED7A2C78C87A00F5B005 /* CardsApp.swift */,
+				0F5394232C875ACA0017899F /* AppLoadingView.swift */,
+				0F5394252C875AD70017899F /* SplashScreen.swift */,
 				0F43A89C2C7A1E9400523116 /* Views */,
 				0F43A89D2C7A1EB000523116 /* Model */,
 				0F43A8A82C7A3C2000523116 /* Config */,
@@ -325,6 +337,7 @@
 				0F43A8D82C820BF300523116 /* FileManagerExtensions.swift in Sources */,
 				0F43A8C82C7CAA6A00523116 /* PencilView.swift in Sources */,
 				0FFAED7D2C78C87A00F5B005 /* ContentView.swift in Sources */,
+				0F5394282C875F8B0017899F /* UIApplicationExtensions.swift in Sources */,
 				0FFAED892C78D02600F5B005 /* CardsListView.swift in Sources */,
 				0FFAED8F2C78D2A500F5B005 /* ViewState.swift in Sources */,
 				0FFAED7B2C78C87A00F5B005 /* CardsApp.swift in Sources */,
@@ -349,7 +362,9 @@
 				0FFAED8D2C78D1E200F5B005 /* SingleCardView.swift in Sources */,
 				0F43A8CC2C7CD12100523116 /* FramePicker.swift in Sources */,
 				0F43A8A42C7A277400523116 /* Operators.swift in Sources */,
+				0F5394242C875ACA0017899F /* AppLoadingView.swift in Sources */,
 				0FFAED8B2C78D14D00F5B005 /* CardThumbnailView.swift in Sources */,
+				0F5394262C875AD70017899F /* SplashScreen.swift in Sources */,
 				0F43A8B02C7A63C700523116 /* PreviewData.swift in Sources */,
 				0F5394192C87566A0017899F /* RenderableView.swift in Sources */,
 				0F43A8C02C7BA1C000523116 /* StickerPicker.swift in Sources */,
@@ -357,6 +372,7 @@
 				0F43A8BA2C7A840000523116 /* CardElementView.swift in Sources */,
 				0F43A8B62C7A681C00523116 /* Card.swift in Sources */,
 				0F43A8A22C7A24B800523116 /* Transform.swift in Sources */,
+				0F53942A2C8894150017899F /* ListSelectionView.swift in Sources */,
 				0F43A8B22C7A640800523116 /* TextExtensions.swift in Sources */,
 				0F43A8972C7A11E000523116 /* CardDetailView.swift in Sources */,
 				0F43A8C22C7C870700523116 /* PhotoPicker.swift in Sources */,
